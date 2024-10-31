@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  ubuntu-gui:
+    image: ubuntu-gui
+    ports:
+      - "3389:3389"
+    volumes:
+      - mi_volumen:/app/data
+volumes:
+  mi_volumen:
