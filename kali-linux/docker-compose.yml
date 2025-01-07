@@ -1,0 +1,44 @@
+# version: '3.8'
+
+# services:
+#   kali:
+#     build:
+#       context: .
+#     volumes:
+#       - kali_data:/app/data
+#     command: ["/bin/bash"]
+
+#   
+
+# volumes:
+#   kali_data:
+  
+version: '3.8'
+
+services:
+  kali:
+    image: kalilinux/kali-rolling:latest
+    container_name: kali_linux
+    volumes:
+      - kali_data:/app/dataw
+    tty: true
+    command: ["/bin/bash"]
+  sqlmap:
+    image: sqlmap
+    depends_on:
+      - kali
+    volumes:
+      - sqlmap_data:/app/data
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+  python-app:
+    image: python # Usa la imagenw de Python que ya tienes
+    depends_on:
+      - kali
+    volumes:
+      - python_data:/app/data
+    entrypoint: ["tail", "-f", "/dev/null"]
+volumes:
+  kali_data:
+  sqlmap_data:
+  python_data:
