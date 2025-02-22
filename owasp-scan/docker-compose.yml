@@ -1,16 +1,16 @@
 version: '3'
 services:
-  beautiful_chatele:
+  badstore:
     image: jvhoof/badstore-docker
-    container_name: beautiful_chatele
+    container_name: badstore
     networks:
       - mi_red
     ports:
       - "80:80"
 
-  friendly_bhabha:
+  owaszap:
     image: ghcr.io/zaproxy/zaproxy:stable
-    container_name: friendly_bhabha
+    container_name: owaszap
     user: zap
     networks:
       - mi_red
