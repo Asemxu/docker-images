@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8050:8050"
+    env_file:
+      - .env
+    command: ./start.sh

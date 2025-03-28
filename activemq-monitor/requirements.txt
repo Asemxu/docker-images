@@ -1,0 +1,7 @@
+dash
+flask
+plotly
+python-dotenv
+requests
+xmltodict
+nodemon-py-simple
